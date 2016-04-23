@@ -1,0 +1,40 @@
+@model McWendellKingSchedule.ViewModels.ScheduleDetails.CalendarView
+
+@foreach (var day in Model.DetailDate)
+{
+    <div class="col-md-4 col-sm-4 col-xs-8">
+        <div class="panel panel-info">
+            <div class="panel panel-heading">@day.ToShortDateString()</div>
+            <div class="panel panel-body">
+                @foreach (var shift in Model.Shifts)
+                {
+                    <ul>
+                        <li><h4>@shift</h4></li>
+                        @foreach (var position in Model.Positions)
+                        {
+                            <ul>
+                                <li><h5>@position</h5></li>
+                                @foreach (var entry in Model.ScheduleDetails)
+                                {
+                                    if (entry.Date.ToShortDateString().Contains(day.ToShortDateString()) && entry.ShiftName.Contains(shift) && entry.PositionName.Contains(position))
+                                    {
+                                            <ul>
+                                            <li>@entry.FullName</li>
+                                            </ul>
+                                    }
+                                }
+                            </ul>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

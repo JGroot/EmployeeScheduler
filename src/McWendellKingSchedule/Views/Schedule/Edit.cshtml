@@ -8,6 +8,7 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+
 <div>@Component.Invoke("ScheduleDetail", Model.ScheduleID)</div>
 <div class="col-md-4 col-sm-4 col-xs-8">
     <div class="panel panel-info">
@@ -18,9 +19,9 @@
                     <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="ScheduleID" />
                     <div class="form-group">
-                        <label asp-for="DateCreated"></label>
-                        <input asp-for="DateCreated" class="form-control" />
-                        <span asp-validation-for="DateCreated" class="text-danger" />
+                        <label asp-for="DateStart"></label>
+                        <input asp-for="DateStart" class="form-control" />
+                        <span asp-validation-for="DateStart" class="text-danger" />
                     </div>
                     <div class="form-group">
                         <label asp-for="DateEnd"></label>
@@ -28,16 +29,15 @@
                         <span asp-validation-for="DateEnd" class="text-danger" />
                     </div>
                     <div class="form-group">
-                        <label asp-for="DateStart"></label>
-                        <input asp-for="DateStart" class="form-control" />
-                        <span asp-validation-for="DateStart" class="text-danger" />
-                    </div>
-                    <div class="form-group">
                         <label asp-for="UserName">UserName</label>
                         @Html.DropDownList("UserName", null, htmlAttributes: new { @class = "form-control" })
                         <span asp-validation-for="UserName" class="text-danger" />
                     </div>
-
+                    <div class="form-group">
+                        <label asp-for="DateCreated"></label>
+                        <input asp-for="DateCreated" class="form-control" />
+                        <span asp-validation-for="DateCreated" class="text-danger" />
+                    </div>
                     <div class="form-group">                   
                             <input type="submit" value="Save Schedule" class="btn btn-success" />
                     </div>
@@ -47,6 +47,7 @@
     </div>
 
 </div>
+<div>@Component.Invoke("CalendarView", Model.ScheduleID)</div>
 
 @section Scripts {
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -23,6 +23,7 @@ namespace McWendellKingSchedule.ViewComponents
 
             var details = (from sd in _context.ScheduleDetail.ToList()
                            where sd.ScheduleID == id
+                           orderby sd.Date, sd.Shift, sd.Position, sd.FullName
                            select sd).ToList();
 
             ViewData["ScheduleID"] = id;
