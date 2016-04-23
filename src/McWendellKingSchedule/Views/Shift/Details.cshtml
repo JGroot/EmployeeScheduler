@@ -1,0 +1,42 @@
+@model McWendellKingSchedule.Models.Shift
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shift</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShiftDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShiftEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ShiftStart)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.isActive)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.isActive)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.ShiftName">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>

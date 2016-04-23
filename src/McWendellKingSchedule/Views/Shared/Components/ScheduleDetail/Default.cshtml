@@ -1,0 +1,55 @@
+@model IEnumerable<McWendellKingSchedule.Models.ScheduleDetail>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+<div class="col-md-5">
+    <div class="panel panel-default">
+        <div class="panel panel-heading">Schedule Details</div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ShiftName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PositionName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShiftName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PositionName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        <a asp-action="EditDetail" asp-route-id="@item.ID" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-wrench"></span> Edit</a>
+                        <a asp-action="DeleteDetail" asp-route-id="@item.ID" class="btn-danger btn-xs"><span class="glyphicon glyphicon-minus-sign"></span>Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <p>
+        <a asp-action="AddDetail" asp-route-id="@ViewData["ScheduleID"]" class="btn btn-sm btn-primary">Add Detail</a>
+    </p>
+</div>
+

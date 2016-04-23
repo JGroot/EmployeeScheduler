@@ -1,0 +1,47 @@
+@model McWendellKingSchedule.Models.ScheduleDetail
+
+@{
+    ViewData["Title"] = "DeleteDetail";
+}
+
+<h2>Delete Detail</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Schedule Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>      
+       <dt>
+           @Html.DisplayFor(model => model.ShiftName)
+       </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.ShiftName)
+        </dd>
+        <dt>
+            @Html.DisplayFor(model => model.PositionName)
+        </dt>
+        <dd>
+            @Html.DisplayNameFor(model => model.PositionName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        
+    </dl>
+    
+    <form asp-action="DeleteDetail">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Edit" asp-route-id="@Model.ScheduleID">Back to List</a>
+        </div>
+    </form>
+</div>

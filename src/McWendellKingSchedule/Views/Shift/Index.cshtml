@@ -1,0 +1,60 @@
+@model IEnumerable<McWendellKingSchedule.Models.Shift>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-md-12">
+    <h1 class="page-head-line">Shift</h1>
+    <h1 class="page-subhead-line">Current active shifts</h1>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-primary">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isActive)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftEnd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isActive)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ShiftName" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-sunglasses"></span> Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.ShiftName" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-wrench"></span> Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.ShiftName" class="btn-danger btn-xs"><span class="glyphicon glyphicon-minus-sign"></span>Delete</a>
+            </td>
+        </tr>
+    }
+</table>
