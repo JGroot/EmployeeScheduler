@@ -2,23 +2,9 @@
 
 @if (User.IsSignedIn())
 {
-    @*<form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">*@
     <form asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm">
-        @*<ul class="nav navbar-nav navbar-right">*@
-        @*<ul>
-            <li>*@
-                <a asp-controller="Manage" asp-action="Index" title="Manage" class="inner-text">@User.GetUserName()</a>
-            @*</li>
-            <li>*@
-                <button type="submit" class="btn btn-xs btn-default">Log off</button>
-            @*</li>
-        </ul>*@
+         <a asp-controller="Manage" asp-action="Index" title="Manage" class="inner-text">Hello @User.GetUserName()</a>    
+        <br/>    
+         <button type="submit" class="btn btn-xs btn-default">Log off</button>
     </form>
-}
-else
-{       
-     @*<ul class="text-left">
-        <li><a asp-controller="Account" asp-action="Register" class="btn btn-sm btn-default">Register</a></li>
-        <li><a asp-controller="Account" asp-action="Login" class="btn btn-sm btn-default">Log in</a></li>
-    </ul>*@
 }

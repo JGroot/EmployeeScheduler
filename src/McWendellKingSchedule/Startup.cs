@@ -106,7 +106,7 @@ namespace McWendellKingSchedule
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Login}/{id?}");
+                    template: "{controller=Schedule}/{action=Index}/{id?}");
             });
           SeedData.Initialize(app.ApplicationServices);
         }
