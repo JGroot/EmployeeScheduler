@@ -11,10 +11,10 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DateCreated)
+            @Html.DisplayNameFor(model => model.DateStart)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DateCreated)
+            @Html.DisplayFor(model => model.DateStart)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.DateEnd)
@@ -23,14 +23,24 @@
             @Html.DisplayFor(model => model.DateEnd)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DateStart)
+            @Html.DisplayNameFor(model => model.UserName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DateStart)
+            @Html.DisplayFor(model => model.UserName)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateCreated)
+        </dd>
+       
+       
     </dl>
 </div>
+<div class="col-md-1"></div>
 <p>
-    <a asp-action="Edit" asp-route-id="@Model.ScheduleID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ScheduleID" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-wrench"></span> Edit</a> |
+    <a asp-action="Index" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-backward"></span>Back to List</a> |
 </p>
+<div>@Component.Invoke("CalendarView", Model.ScheduleID)</div>
