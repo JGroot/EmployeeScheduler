@@ -4,9 +4,9 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<div class="col-md-10 col-sm-10 col-xs-10"><h2>Details</h2></div>
 
-<div>
+<div class="col-xs-10">
     <h4>Schedule</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -33,14 +33,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.DateCreated)
-        </dd>
-       
-       
+        </dd>      
     </dl>
 </div>
-<div class="col-md-1"></div>
-<p>
+
+<p class="col-md-offset-1 col-sm-10 col-xs-12">
     <a asp-action="Edit" asp-route-id="@Model.ScheduleID" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-wrench"></span> Edit</a> |
-    <a asp-action="Index" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-backward"></span>Back to List</a> |
+    <a asp-action="Index" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-backward"></span>Back to List</a> 
 </p>
 <div>@Component.Invoke("CalendarView", Model.ScheduleID)</div>

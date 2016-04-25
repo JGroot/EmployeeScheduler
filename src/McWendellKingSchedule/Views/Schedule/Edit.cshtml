@@ -4,13 +4,13 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit Schedule</h2>
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="col-md-10 col-sm-10 col-xs-10"><h2>Edit Schedule</h2></div>
+<div class="col-md-10 col-sm-10 col-xs-10">
+    <a asp-action="Index" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-backward"></span>Back to List</a>
 </div>
 
 <div>@Component.Invoke("ScheduleDetail", Model.ScheduleID)</div>
-<div class="col-md-4 col-sm-8 col-xs-8">
+<div class="col-md-4 col-sm-8 col-xs-12">
     <div class="panel panel-info">
         <div class="panel panel-heading">Schedule</div>
         <div class="panel-body">
