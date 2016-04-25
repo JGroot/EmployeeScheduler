@@ -28,6 +28,7 @@ namespace McWendellKingSchedule.ViewComponents
             calendar.ScheduleID = (int)id;
             calendar.ScheduleDetails = details;
             calendar.DetailDate = details.OrderBy(d => d.Date).Select(d => d.Date);
+            calendar.DetailDate = calendar.DetailDate.GroupBy(d => d.Date).Select(group => group.First());
             calendar.Shifts = _context.Shift.OrderBy(s => s.ShiftStart).Select(s => s.ShiftName);
             calendar.Positions = _context.Position.OrderBy(p => p.PositionName).Select(p => p.PositionName);
            

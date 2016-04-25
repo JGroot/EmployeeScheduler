@@ -1,5 +1,5 @@
 ﻿{
-  "userSecretsId": "aspnet5-McWendellKingSchedule-8d5114f5-7f67-491c-b305-1cdae8190ce4",
+  "userSecretsId": "McWendallKingScheduler",
   "version": "1.0.0-*",
   "compilationOptions": {
     "emitEntryPoint": true
@@ -19,7 +19,7 @@
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1-final",
     "Microsoft.Extensions.CodeGenerators.Mvc": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions" : "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",

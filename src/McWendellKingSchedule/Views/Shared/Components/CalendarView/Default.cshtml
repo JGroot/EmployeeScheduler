@@ -1,5 +1,6 @@
 @model McWendellKingSchedule.ViewModels.ScheduleDetails.CalendarView
 
+
 @foreach (var day in Model.DetailDate)
 {
     <div class="col-md-4 col-sm-4 col-xs-8">
@@ -8,24 +9,20 @@
             <div class="panel panel-body">
                 @foreach (var shift in Model.Shifts)
                 {
-                    <ul>
-                        <li><h4>@shift</h4></li>
+                       <h4><u>@shift</u></h4>
                         @foreach (var position in Model.Positions)
                         {
-                            <ul>
-                                <li><h5>@position</h5></li>
+                               @*<h5>@position</h5>*@
                                 @foreach (var entry in Model.ScheduleDetails)
                                 {
                                     if (entry.Date.ToShortDateString().Contains(day.ToShortDateString()) && entry.ShiftName.Contains(shift) && entry.PositionName.Contains(position))
                                     {
-                                            <ul>
-                                            <li>@entry.FullName</li>
-                                            </ul>
+                                            
+                                      <div>@position  -  @entry.FullName</div>
+                                            
                                     }
                                 }
-                            </ul>
                         }
-                    </ul>
                 }
             </div>
         </div>
