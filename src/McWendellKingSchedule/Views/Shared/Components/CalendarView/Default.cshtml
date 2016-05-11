@@ -9,14 +9,14 @@
             <div class="panel panel-body">
                 @foreach (var shift in Model.Shifts)
                 {
+                    <h4><u>@shift</u></h4>
                     @foreach (var position in Model.Positions)
                     {
                         @foreach (var entry in Model.ScheduleDetails)
                         {
                             if (entry.Date.ToShortDateString().Contains(day.ToShortDateString()) && entry.ShiftName.Contains(shift) && entry.PositionName.Contains(position))
                             {
-                                <h4><u>@shift</u></h4>
-                                        <div>@position  -  @entry.FullName</div>
+                               <div>@position  -  @entry.FullName</div>
                             }
                         }
                     }

@@ -11,19 +11,18 @@
         <h4>Shift</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
-        <input type="hidden" asp-for="ShiftName" />
+        <div class="form-group">
+            <label asp-for="ShiftName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ShiftName" class="form-control" />
+                <span asp-validation-for="ShiftName" class="text-danger" />
+            </div>
+        </div>
         <div class="form-group">
             <label asp-for="ShiftDescription" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <input asp-for="ShiftDescription" class="form-control" />
                 <span asp-validation-for="ShiftDescription" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="ShiftEnd" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="ShiftEnd" class="form-control" />
-                <span asp-validation-for="ShiftEnd" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
@@ -33,6 +32,13 @@
                 <span asp-validation-for="ShiftStart" class="text-danger" />
             </div>
         </div>
+        <div class="form-group">
+            <label asp-for="ShiftEnd" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ShiftEnd" class="form-control" />
+                <span asp-validation-for="ShiftEnd" class="text-danger" />
+            </div>
+        </div>       
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <div class="checkbox">
